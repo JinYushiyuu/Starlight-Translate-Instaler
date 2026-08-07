@@ -155,6 +155,16 @@ namespace Starlight_Translate_Instalador
             CarregarListaDeJogos();
         }
 
+        private static string ObterNomeArquivoZip(string nomeJogo)
+        {
+            string nomeLimpo = nomeJogo;
+            foreach (char c in Path.GetInvalidFileNameChars())
+            {
+                nomeLimpo = nomeLimpo.Replace(c.ToString(), "");
+            }
+            return nomeLimpo.Trim() + ".zip";
+        }
+
         public static string ObterCaminhoDownload()
         {
             try
@@ -478,11 +488,27 @@ namespace Starlight_Translate_Instalador
                 }
                 else if (jogoSelecionado.Disponivel)
                 {
-                    BtnInstalar.Content = "BAIXAR";
-                    BtnInstalar.Background = (Brush)new BrushConverter().ConvertFrom("#47b900"); 
-                    BtnInstalar.Foreground = Brushes.White; 
-                    BtnInstalar.IsHitTestVisible = true; 
-                    BtnInstalar.Opacity = 1.0;
+                    string caminhoZipExistente = Path.Combine(ObterCaminhoDownload(), ObterNomeArquivoZip(jogoSelecionado.Nome));
+
+                    if (File.Exists(caminhoZipExistente))
+                    {
+                        _downloadConcluido = true;
+                        _ultimoArquivoBaixado = caminhoZipExistente;
+
+                        BtnInstalar.Content = "INSTALAR";
+                        BtnInstalar.Background = (Brush)new BrushConverter().ConvertFrom("#2e86de");
+                        BtnInstalar.Foreground = Brushes.White;
+                        BtnInstalar.IsHitTestVisible = true;
+                        BtnInstalar.Opacity = 1.0;
+                    }
+                    else
+                    {
+                        BtnInstalar.Content = "BAIXAR";
+                        BtnInstalar.Background = (Brush)new BrushConverter().ConvertFrom("#47b900"); 
+                        BtnInstalar.Foreground = Brushes.White; 
+                        BtnInstalar.IsHitTestVisible = true; 
+                        BtnInstalar.Opacity = 1.0;
+                    }
                 }
                 else
                 {
@@ -525,7 +551,7 @@ namespace Starlight_Translate_Instalador
                     {
                         string urlDestino = jogoSelecionado.UrlDownload;
                         string pastaDestinoDownload = ObterCaminhoDownload();
-                        _ultimoArquivoBaixado = Path.Combine(pastaDestinoDownload, "traducao_" + Guid.NewGuid().ToString().Substring(0, 5) + ".zip");
+                        _ultimoArquivoBaixado = Path.Combine(pastaDestinoDownload, ObterNomeArquivoZip(jogoSelecionado.Nome));
 
                         if (urlDestino.Contains("drive.google.com") || urlDestino.Contains("drive.usercontent.google.com"))
                         {
@@ -619,6 +645,8 @@ namespace Starlight_Translate_Instalador
 
                         _downloadConcluido = true;
                         BtnInstalar.Content = "INSTALAR";
+                        BtnInstalar.Background = (Brush)new BrushConverter().ConvertFrom("#2e86de");
+                        BtnInstalar.Foreground = Brushes.White;
                         BtnInstalar.Visibility = Visibility.Visible;
                     }
                     catch (OperationCanceledException)
