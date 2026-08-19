@@ -8,10 +8,27 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>img\icon-app\Sophie.ico</ApplicationIcon>
+
+    <!-- Versão atual do app. É isso que o Velopack compara com a última release do GitHub. -->
+    <Version>1.0.0</Version>
+
+    <!-- Agora o Main é escrito à mão em App.xaml.cs, então o WPF precisa saber onde ele está -->
+    <StartupObject>Starlight_Translate_Instalador.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <Resource Include="img\**\*.*" />
+  </ItemGroup>
+
+  <!-- Necessário pro Main customizado funcionar: App.xaml deixa de ser o "ApplicationDefinition"
+       (que gera o Main automático do WPF) e vira uma Page comum. -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Velopack" Version="1.2.0" />
   </ItemGroup>
 
 </Project>

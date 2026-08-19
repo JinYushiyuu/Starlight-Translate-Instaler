@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wZYZrKY7O3g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jinyu\\OneDrive\\Documentos\\GitHub\\Starlight-Translate-Instaler\\Starlight-Translate-Instalador\\Starlight-Translate-Instalador.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jinyu\\.nuget\\packages\\velopack\\1.2.0\\velopack.1.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

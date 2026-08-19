@@ -1,0 +1,27 @@
+﻿<Window x:Class="Starlight_Translate_Instalador.UpdateCheckWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Starlight Translate"
+        Height="180" Width="420"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#1e1e24">
+    <Grid Margin="30">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock x:Name="TxtStatus"
+                       Text="Verificando se há atualizações..."
+                       Foreground="White"
+                       FontSize="14"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,16" />
+            <ProgressBar x:Name="Progresso"
+                         Height="6"
+                         Minimum="0" Maximum="100"
+                         IsIndeterminate="True"
+                         Background="#161920"
+                         Foreground="#47b900" />
+        </StackPanel>
+    </Grid>
+</Window>
