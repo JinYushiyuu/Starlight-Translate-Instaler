@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Starlight-Translate-Instalador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d7dcccbd1f0b31293fe86e6387a60eb9bc076f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60b4c1dc026f8799b5bca1b36eaa5eac0b8b77ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("Starlight-Translate-Instalador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Starlight-Translate-Instalador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

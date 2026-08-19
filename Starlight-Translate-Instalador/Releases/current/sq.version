@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<metadata>
+<id>StarlightTranslate.Instalador</id>
+<title>StarlightTranslate.Instalador</title>
+<description>StarlightTranslate.Instalador</description>
+<authors>StarlightTranslate.Instalador</authors>
+<version>1.0.0</version>
+<channel>win</channel>
+<mainExe>Starlight-Translate-Instalador.exe</mainExe>
+<os>win</os>
+<rid>win</rid>
+<shortcutLocations>Desktop,StartMenuRoot</shortcutLocations>
+<shortcutAumid>velopack.StarlightTranslate.Instalador</shortcutAumid>
+</metadata>
+</package>

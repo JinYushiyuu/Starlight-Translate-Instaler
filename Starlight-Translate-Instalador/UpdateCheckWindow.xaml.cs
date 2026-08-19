@@ -7,8 +7,7 @@ namespace Starlight_Translate_Instalador
 {
     public partial class UpdateCheckWindow : Window
     {
-        // TODO: troque pelo link do SEU repositório assim que ele existir no GitHub
-        private const string GithubRepoUrl = "https://github.com/SEU_USUARIO/Starlight-Translate-Instalador";
+        private const string GithubRepoUrl = "https://github.com/JinYushiyuu/Starlight-Translate-Instaler";
 
         public UpdateCheckWindow()
         {

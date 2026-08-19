@@ -17,7 +17,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Resource Include="img\**\*.*" />
+    <Content Include="img\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <!-- Necessário pro Main customizado funcionar: App.xaml deixa de ser o "ApplicationDefinition"
